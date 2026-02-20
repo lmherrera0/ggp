@@ -53,17 +53,43 @@ In the spirit of the very principles this framework promotes, full transparency 
 
 This framework was developed collaboratively between the Author and Anthropic’s Claude AI models. The AI assisted with research synthesis and compilation, document structuring and formatting, platform-specific adaptation drafting, and technical documentation generation.
 
-**[CONFIRMED] The following remain entirely the Author’s original contributions:**
+**[CONFIRMED] The following remain entirely the Author’s original contributions, listed in order of intellectual property priority:**
 
-- The core conceptual framework and methodology
-- The “GroundedGate” naming and branding
-- The visual marker system design decisions
-- The anti-fatigue iteration control concept
-- The practical application requirements derived from real-world professional experience
-- All strategic decisions regarding framework architecture
-- Final review, validation, and approval of all content
+**Tier A — Core Inventions (Highest IP Value)**
 
-The Author takes full responsibility for the intellectual direction, practical utility, and professional applicability of this framework.
+1. The “GroundedGate Protocol” concept, naming, and acronym (GGP)
+2. The five-marker confidence classification system: [CONFIRMED], [GAP], [INFERENCE], [UNVERIFIED], [RISK]
+3. The four-tier source classification hierarchy (Tier 1–4) and source citation metadata format
+4. The anti-fatigue iteration control mechanism with structured round limits
+5. The Devil’s Advocate risk assessment framework and its three tests (Hostile Reader Test, Screenshot Test, CEO Test)
+
+**Tier B — Structural Architecture & Methodologies**
+
+6. The 14-phase GGP compliance cycle (Phases A–N) with zero-skip policy
+7. The 22-channel communication system with dedicated templates (Email, LinkedIn, Twitter/X, Instagram, Presentations, Press Release, Academic Journal, Legal Disclaimers, and 14 others)
+8. The 7-analysis template library (Use Cases, Benchmark, Gap Analysis, SWOT, Cost-Benefit, Maturity Assessment, Stakeholder Analysis)
+9. The chain-of-thought reasoning gate and pre-creation compliance verification (12-point gate)
+10. The post-creation validation gate (11-point checklist)
+11. The platform-specific implementation guides (Claude, ChatGPT, Google Gems, Copilot)
+12. The consulting etiquette framework (“The 7 Golden Rules”) and prohibited language patterns database
+
+**Tier C — Integration & Ecosystem Design**
+
+13. The cross-compliance integration architecture between GGP and the Author’s Brand Voice & Visual Gate (BVVG) system
+14. The sequential skill pipeline design: Primary Research → Secondary Research → Content Creation → Editorial Publishing, with bi-directional feedback loops
+15. The content atomisation framework (one research output producing 11+ derivative formats)
+16. The inter-skill data handoff protocol and error recovery cascading failure protocol
+17. The Hero’s Journey academic narrative framework (5-act structure for research writing)
+18. The 6-layer editorial review stack with severity classification and feedback loop triggers
+
+**Tier D — Strategic Direction & Professional Application**
+
+19. All practical application requirements derived from the Author’s real-world professional experience in data governance, analytics, and AI-assisted communications
+20. All strategic decisions regarding framework architecture, versioning, and evolution
+21. The domain-specific verification rules for financial, statistical, and business intelligence content
+22. Final review, validation, and approval of all content across all versions
+
+The Author takes full responsibility for the intellectual direction, practical utility, and professional applicability of this framework and all associated systems.
 
 ---
 
@@ -239,7 +265,7 @@ By using the GroundedGate Protocol (GGP), you acknowledge that you have read, un
 
 | Version | Date | Key Changes |
 |---------|------|-------------|
-| 4.3 | February 2026 | Updated Author attribution to legal name; added CC-BY-NC-SA 4.0 licence; added personal IP declaration and employer separation clause; added data protection statement; added GDPR-compliant change notification; added GGP markers; aligned with BVVG brand compliance |
+| 4.3 | February 2026 | Updated Author attribution to legal name; added CC-BY-NC-SA 4.0 licence; added personal IP declaration and employer separation clause; added data protection statement; added GDPR-compliant change notification; added GGP markers; aligned with BVVG brand compliance; expanded original contributions declaration with 4-tier IP priority system |
 | 4.2 | February 2026 | Channel system expansion (22 channels + 7 analysis templates); platform adapters (Claude, ChatGPT, Gems, Copilot); BVVG integration; consulting etiquette reference |
 | 4.1 | February 2025 | Added anti-loop fatigue system, [A][B][C] user control options, clean output step, consolidated documentation |
 | 4.0 | January 2025 | Introduced visual markers, platform-specific adapters |
