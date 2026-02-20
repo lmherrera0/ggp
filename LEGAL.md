@@ -5,7 +5,48 @@
 
 ---
 
-This document has NOT been reviewed by qualified legal counsel. It represents the Author’s understanding of intellectual property protection, licensing, and liability limitation. For legal questions specific to your situation or jurisdiction, consult a licensed attorney. This is not legal advice.
+This document has NOT been reviewed by qualified legal counsel. It represents the Author's understanding of intellectual property protection, licensing, and liability limitation. For legal questions specific to your situation or jurisdiction, consult a licensed attorney. This is not legal advice.
+
+---
+
+## Quick Reference: How to Cite This Work
+
+This section provides ready-to-use attribution notices in three formats. Copy the version that matches your medium.
+
+**Licence verification:** [CC BY-NC-SA 4.0 — Full Legal Text](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+**Source repository:** [github.com/lmherrera0/ggp](https://github.com/lmherrera0/ggp)
+
+### For Web & Digital Use (HTML)
+
+Paste this HTML wherever you reference the framework online:
+
+```html
+<a href="https://github.com/lmherrera0/ggp">Grounded Gate Protocol (GGP)</a> © 2025 by <a href="https://www.linkedin.com/in/lmherrera0/">Liz Magaly Herrera Jara</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="max-width:1em;max-height:1em;margin-left:.2em;">
+<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="max-width:1em;max-height:1em;margin-left:.2em;">
+<img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" style="max-width:1em;max-height:1em;margin-left:.2em;">
+<img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="max-width:1em;max-height:1em;margin-left:.2em;">
+```
+
+### For Print, Presentations & Media
+
+Copy this text to the title page, copyright page, or credits section:
+
+```
+Grounded Gate Protocol (GGP) © 2025 by Liz Magaly Herrera Jara is licensed under CC BY-NC-SA 4.0.
+To view a copy of this licence, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
+```
+
+### For Plain Text & Markdown
+
+Use this in README files, documentation, or any text-based reference:
+
+```
+This work uses the Grounded Gate Protocol (GGP) by Liz Magaly Herrera Jara (lmherrera0).
+Source: https://github.com/lmherrera0/ggp
+Licensed under CC BY-NC-SA 4.0 International.
+© 2025–2026 Liz Magaly Herrera Jara. Used under licence.
+```
 
 ---
 
@@ -38,11 +79,11 @@ Excluded:
 - **Digital Handle:** lmherrera0
 - **Contact:** [linkedin.com/in/lmherrera0](https://www.linkedin.com/in/lmherrera0)
 
-The Grounded Gate Protocol (GGP), including all associated documentation, methodologies, visual marker systems, iteration control mechanisms, and platform-specific adaptations, is the original intellectual work of Liz Magaly Herrera Jara (“the Author”).
+The Grounded Gate Protocol (GGP), including all associated documentation, methodologies, visual marker systems, iteration control mechanisms, and platform-specific adaptations, is the original intellectual work of Liz Magaly Herrera Jara ("the Author").
 
 ### Personal Intellectual Property Declaration
 
-This framework is the Author’s personal intellectual property. It was conceived, designed, and developed independently, outside the scope of any employment relationship, using the Author’s own resources and on the Author’s own time. No employer, client, or third party has ownership rights, claims, or licensing authority over this work unless explicitly granted in writing by the Author.
+This framework is the Author's personal intellectual property. It was conceived, designed, and developed independently, outside the scope of any employment relationship, using the Author's own resources and on the Author's own time. No employer, client, or third party has ownership rights, claims, or licensing authority over this work unless explicitly granted in writing by the Author.
 
 The hosting, storage, or display of this framework on any platform (including employer-provided infrastructure, cloud services, or third-party repositories) does not transfer, assign, or imply any ownership rights to the platform operator, employer, or service provider.
 
@@ -50,17 +91,17 @@ The hosting, storage, or display of this framework on any platform (including em
 
 In the spirit of the very principles this framework promotes, full transparency is provided regarding its creation:
 
-This framework was developed collaboratively between the Author and Anthropic’s Claude AI models. The AI assisted with research synthesis and compilation, document structuring and formatting, platform-specific adaptation drafting, and technical documentation generation.
+This framework was developed collaboratively between the Author and Anthropic's Claude AI models. The AI assisted with research synthesis and compilation, document structuring and formatting, platform-specific adaptation drafting, and technical documentation generation.
 
-**The following remain entirely the Author’s original contributions:**
+**The following remain entirely the Author's original contributions:**
 
 **Tier A — Core Inventions (Highest IP Value)**
 
-1. The “GroundedGate Protocol” concept, naming, and acronym (GGP)
+1. The "GroundedGate Protocol" concept, naming, and acronym (GGP)
 2. The five-marker confidence classification system: [CONFIRMED], [GAP], [INFERENCE], [UNVERIFIED], [RISK]
 3. The four-tier source classification hierarchy (Tier 1–4) and source citation metadata format
 4. The anti-fatigue iteration control mechanism with structured round limits
-5. The Devil’s Advocate risk assessment framework and its three tests (Hostile Reader Test, Screenshot Test, CEO Test)
+5. The Devil's Advocate risk assessment framework and its three tests (Hostile Reader Test, Screenshot Test, CEO Test)
 
 **Tier B — Structural Architecture & Methodologies**
 
@@ -70,20 +111,20 @@ This framework was developed collaboratively between the Author and Anthropic’
 9. The chain-of-thought reasoning gate and pre-creation compliance verification (12-point gate)
 10. The post-creation validation gate (11-point checklist)
 11. The platform-specific implementation guides (Claude, ChatGPT, Google Gems, Copilot)
-12. The consulting etiquette framework (“The 7 Golden Rules”) and prohibited language patterns database
+12. The consulting etiquette framework ("The 7 Golden Rules") and prohibited language patterns database
 
 **Tier C — Integration & Ecosystem Design**
 
-13. The cross-compliance integration architecture between GGP and the Author’s Brand Voice & Visual Gate (BVVG) system
+13. The cross-compliance integration architecture between GGP and the Author's Brand Voice & Visual Gate (BVVG) system
 14. The sequential skill pipeline design: Primary Research → Secondary Research → Content Creation → Editorial Publishing, with bi-directional feedback loops
 15. The content atomisation framework (one research output producing 11+ derivative formats)
 16. The inter-skill data handoff protocol and error recovery cascading failure protocol
-17. The Hero’s Journey academic narrative framework (5-act structure for research writing)
+17. The Hero's Journey academic narrative framework (5-act structure for research writing)
 18. The 6-layer editorial review stack with severity classification and feedback loop triggers
 
 **Tier D — Strategic Direction & Professional Application**
 
-19. All practical application requirements derived from the Author’s real-world professional experience in data governance, analytics, and AI-assisted communications
+19. All practical application requirements derived from the Author's real-world professional experience in data governance, analytics, and AI-assisted communications
 20. All strategic decisions regarding framework architecture, versioning, and evolution
 21. The domain-specific verification rules for financial, statistical, and business intelligence content
 22. Final review, validation, and approval of all content across all versions
@@ -97,7 +138,7 @@ The Author takes full responsibility for the intellectual direction, practical u
 **What This Framework IS:**
 
 - A compilation of tested approaches for reducing AI hallucinations in professional communications
-- A methodology guide based on the Author’s professional experience in data, analytics, compliance, and AI-assisted communications
+- A methodology guide based on the Author's professional experience in data, analytics, compliance, and AI-assisted communications
 - An evolving, iterative work-in-progress
 - A contribution to the broader community of AI practitioners
 - A starting point for organisations seeking to improve AI output quality
@@ -116,7 +157,7 @@ The Author takes full responsibility for the intellectual direction, practical u
 
 **NO WARRANTY PROVIDED.**
 
-This framework is provided “AS IS” without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
+This framework is provided "AS IS" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
 
 ### User Responsibility
 
@@ -213,7 +254,7 @@ If you have suggestions for improvement, inconsistency reports, platform-specifi
 
 - **Digital:** [linkedin.com/in/lmherrera0](https://www.linkedin.com/in/lmherrera0)
 
-Significant contributions from the community may be acknowledged in future versions, with the contributor’s permission.
+Significant contributions from the community may be acknowledged in future versions, with the contributor's permission.
 
 ---
 
@@ -230,7 +271,7 @@ If you are in the EU or another jurisdiction with mandatory consumer protection 
 **Last Updated:** February 2026
 **Next Review:** May 2026 (quarterly review scheduled)
 
-The Author reserves the right to modify this disclaimer. Material changes will be communicated through the framework’s changelog and, where reasonably practicable, through the Author’s professional channels. Continued use of the framework following notification of changes constitutes acceptance of the revised terms.
+The Author reserves the right to modify this disclaimer. Material changes will be communicated through the framework's changelog and, where reasonably practicable, through the Author's professional channels. Continued use of the framework following notification of changes constitutes acceptance of the revised terms.
 
 Users are encouraged to check for updates periodically.
 
@@ -240,7 +281,7 @@ Users are encouraged to check for updates periodically.
 
 To put it simply:
 
-1. **I created this.** Liz Magaly Herrera Jara is the author, with AI assistance from Anthropic’s Claude models (which I am transparent about). This is my personal intellectual property — it belongs to me, not to any employer.
+1. **I created this.** Liz Magaly Herrera Jara is the author, with AI assistance from Anthropic's Claude models (which I am transparent about). This is my personal intellectual property — it belongs to me, not to any employer.
 
 2. **It is not finished.** This is a work-in-progress based on my tested approaches, not a polished commercial product.
 
