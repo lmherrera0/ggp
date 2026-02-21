@@ -37,7 +37,7 @@ export default function Feedback() {
         </h2>
         <p className="text-center text-wine/70 max-w-2xl mx-auto mb-12">
           Help us improve GGP. Tell us how you use it, what works, and what you
-          would like to see next.
+          would like to see next. All feedback is anonymous.
         </p>
 
         {submitted ? (
@@ -54,41 +54,6 @@ export default function Feedback() {
             onSubmit={handleSubmit}
             className="card max-w-2xl mx-auto space-y-5"
           >
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div>
-                <label
-                  htmlFor="fb-name"
-                  className="block text-sm font-sans font-semibold text-wine mb-1"
-                >
-                  Name
-                </label>
-                <input
-                  id="fb-name"
-                  name="name"
-                  type="text"
-                  required
-                  className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="fb-email"
-                  className="block text-sm font-sans font-semibold text-wine mb-1"
-                >
-                  Email
-                </label>
-                <input
-                  id="fb-email"
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
-                  placeholder="you@example.com"
-                />
-              </div>
-            </div>
-
             <div>
               <label
                 htmlFor="fb-platform"
@@ -137,6 +102,10 @@ export default function Feedback() {
             >
               {sending ? "Sending\u2026" : "Send Feedback"}
             </button>
+
+            <p className="text-xs text-wine/50 text-center">
+              Anonymous. No personal data collected.
+            </p>
           </form>
         )}
       </div>

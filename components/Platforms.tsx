@@ -8,9 +8,6 @@ import {
   googleGemsTemplate,
 } from "./platformTemplates";
 
-// TODO: Replace with your Formspree form ID from https://formspree.io
-const DOWNLOAD_FORM_URL = "https://formspree.io/f/YOUR_FORM_ID";
-
 const platforms = [
   {
     id: "knowledge-base",
@@ -18,7 +15,6 @@ const platforms = [
     icon: "KB",
     instruction: "",
     template: null as string | null,
-    steps: null as string[] | null,
     isDownload: true,
   },
   {
@@ -28,7 +24,6 @@ const platforms = [
     instruction:
       "Copy the template below and paste it into your Claude Project instructions (Projects \u2192 Edit Project \u2192 Instructions).",
     template: claudeTemplate,
-    steps: null,
     isDownload: false,
   },
   {
@@ -38,7 +33,6 @@ const platforms = [
     instruction:
       "Copy the template below and paste it into your GPT Instructions or ChatGPT Project instructions.",
     template: chatgptTemplate,
-    steps: null,
     isDownload: false,
   },
   {
@@ -48,7 +42,6 @@ const platforms = [
     instruction:
       "Copy the template below and paste it into your Copilot Agent instructions.",
     template: copilotTemplate,
-    steps: null,
     isDownload: false,
   },
   {
@@ -58,7 +51,6 @@ const platforms = [
     instruction:
       "Copy the template below and paste it into your Gem instructions.",
     template: googleGemsTemplate,
-    steps: null,
     isDownload: false,
   },
 ];
@@ -73,9 +65,6 @@ const kbFiles = [
 export default function Platforms() {
   const [active, setActive] = useState("knowledge-base");
   const [copied, setCopied] = useState(false);
-  const [dlName, setDlName] = useState("");
-  const [dlEmail, setDlEmail] = useState("");
-  const [downloading, setDownloading] = useState(false);
   const current = platforms.find((p) => p.id === active)!;
 
   const handleCopy = async () => {
@@ -86,26 +75,11 @@ export default function Platforms() {
     }
   };
 
-  const handleDownload = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setDownloading(true);
-
-    try {
-      await fetch(DOWNLOAD_FORM_URL, {
-        method: "POST",
-        body: JSON.stringify({ name: dlName, email: dlEmail, action: "knowledge-base-download" }),
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-      });
-    } catch {
-      // Continue with download even if tracking fails
-    }
-
-    // Trigger download
+  const handleDownload = () => {
     const link = document.createElement("a");
     link.href = `${process.env.NEXT_PUBLIC_BASE_PATH || "/ggp"}/ggp-knowledge-base.zip`;
     link.download = "ggp-knowledge-base.zip";
     link.click();
-    setDownloading(false);
   };
 
   return (
@@ -186,37 +160,15 @@ export default function Platforms() {
                 ))}
               </div>
 
-              <form onSubmit={handleDownload} className="space-y-4">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <input
-                    type="text"
-                    value={dlName}
-                    onChange={(e) => setDlName(e.target.value)}
-                    required
-                    placeholder="Your name"
-                    className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
-                  />
-                  <input
-                    type="email"
-                    value={dlEmail}
-                    onChange={(e) => setDlEmail(e.target.value)}
-                    required
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={downloading}
-                  className="btn-primary w-full justify-center disabled:opacity-60"
-                >
-                  {downloading ? "Preparing\u2026" : "Download Knowledge Base (.zip)"}
-                </button>
-                <p className="text-xs text-wine/50 text-center">
-                  Your info helps us understand who uses GGP. We never share
-                  your data.
-                </p>
-              </form>
+              <button
+                onClick={handleDownload}
+                className="btn-primary w-full justify-center"
+              >
+                Download Knowledge Base (.zip)
+              </button>
+              <p className="text-xs text-wine/50 text-center mt-3">
+                Free download. No registration required.
+              </p>
             </>
           )}
 
