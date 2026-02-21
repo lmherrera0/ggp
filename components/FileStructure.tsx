@@ -1,6 +1,6 @@
-export default function QuickStart() {
+export default function FileStructure() {
   return (
-    <section className="section-gap">
+    <section id="file-structure" className="section-gap">
       <div className="section-container">
         <h2 className="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">
           File Structure

@@ -51,7 +51,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="section-gap bg-almond/20">
+    <section id="features" className="section-gap bg-almond/20">
       <div className="section-container">
         <h2 className="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">
           What GGP Does

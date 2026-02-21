@@ -38,7 +38,7 @@ const markers = [
 
 export default function Markers() {
   return (
-    <section className="section-gap">
+    <section id="markers" className="section-gap">
       <div className="section-container">
         <h2 className="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">
           Visual Markers

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Serif_Display, Noto_Sans, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -23,10 +23,29 @@ const notoSansMono = Noto_Sans_Mono({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#4C2632",
+};
+
 export const metadata: Metadata = {
-  title: "Grounded Gate Protocol (GGP) — Anti-Hallucination Framework",
+  metadataBase: new URL("https://lmherrera0.github.io"),
+  title: "Grounded Gate Protocol (GGP) \u2014 Anti-Hallucination Framework",
   description:
     "Open-source anti-hallucination framework for AI-generated professional communications. Visual markers, source verification, and risk screening.",
+  openGraph: {
+    title: "Grounded Gate Protocol (GGP)",
+    description:
+      "Open-source anti-hallucination framework for AI-generated professional communications.",
+    url: "/ggp",
+    siteName: "Grounded Gate Protocol",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grounded Gate Protocol (GGP)",
+    description:
+      "Open-source anti-hallucination framework for AI-generated professional communications.",
+  },
 };
 
 export default function RootLayout({

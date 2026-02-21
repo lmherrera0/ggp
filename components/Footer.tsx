@@ -33,10 +33,16 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 pt-6 border-t border-mahogany/40 text-center">
+        <div className="mt-8 pt-6 border-t border-mahogany/40 flex items-center justify-between">
           <p className="text-xs text-pearl/70">
             GGP v4.5-public &middot; &ldquo;Nothing passes unverified.&rdquo;
           </p>
+          <a
+            href="#hero"
+            className="text-sm text-clay hover:text-ivory transition-colors"
+          >
+            Back to top &uarr;
+          </a>
         </div>
       </div>
     </footer>

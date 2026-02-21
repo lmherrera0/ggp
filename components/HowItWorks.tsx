@@ -36,7 +36,7 @@ const phases = [
 
 export default function HowItWorks() {
   return (
-    <section className="section-gap">
+    <section id="how-it-works" className="section-gap">
       <div className="section-container">
         <h2 className="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">
           How It Works
@@ -55,7 +55,7 @@ export default function HowItWorks() {
               <div
                 key={phase.number}
                 className={`lg:grid lg:grid-cols-2 lg:gap-12 items-center ${
-                  i % 2 === 1 ? "lg:direction-rtl" : ""
+                  i % 2 === 1 ? "" : ""
                 }`}
               >
                 <div
