@@ -8,19 +8,18 @@ import {
   googleGemsTemplate,
 } from "./platformTemplates";
 
+// TODO: Replace with your Formspree form ID from https://formspree.io
+const DOWNLOAD_FORM_URL = "https://formspree.io/f/YOUR_FORM_ID";
+
 const platforms = [
   {
-    id: "claude-code",
-    name: "Claude Code",
-    icon: "C",
-    instruction:
-      "Place the ggp/ folder as skills/ggp/ in your project. Claude Code detects SKILL.md automatically and activates GGP on demand.",
+    id: "knowledge-base",
+    name: "Knowledge Base",
+    icon: "KB",
+    instruction: "",
     template: null as string | null,
-    steps: [
-      "Place the ggp/ folder as skills/ggp/ in your project",
-      "Claude Code detects SKILL.md automatically",
-      "Start any content task \u2014 GGP activates on demand",
-    ],
+    steps: null as string[] | null,
+    isDownload: true,
   },
   {
     id: "claude-projects",
@@ -30,6 +29,7 @@ const platforms = [
       "Copy the template below and paste it into your Claude Project instructions (Projects \u2192 Edit Project \u2192 Instructions).",
     template: claudeTemplate,
     steps: null,
+    isDownload: false,
   },
   {
     id: "chatgpt",
@@ -39,6 +39,7 @@ const platforms = [
       "Copy the template below and paste it into your GPT Instructions or ChatGPT Project instructions.",
     template: chatgptTemplate,
     steps: null,
+    isDownload: false,
   },
   {
     id: "copilot",
@@ -48,6 +49,7 @@ const platforms = [
       "Copy the template below and paste it into your Copilot Agent instructions.",
     template: copilotTemplate,
     steps: null,
+    isDownload: false,
   },
   {
     id: "google-gems",
@@ -57,12 +59,23 @@ const platforms = [
       "Copy the template below and paste it into your Gem instructions.",
     template: googleGemsTemplate,
     steps: null,
+    isDownload: false,
   },
 ];
 
+const kbFiles = [
+  { name: "GGP-Core-Rules.pdf", desc: "SKILL.md + general guidelines (source tiers, etiquette, reputation, data integrity, metrics)" },
+  { name: "GGP-Channel-Templates.pdf", desc: "All 22 channel templates (email, LinkedIn, HBR, presentations, and more)" },
+  { name: "GGP-Analysis-Templates.pdf", desc: "7 analysis templates (SWOT, gap analysis, benchmarks, cost-benefit, and more)" },
+  { name: "GGP-About.pdf", desc: "Introduction, executive summary, and legal information" },
+];
+
 export default function Platforms() {
-  const [active, setActive] = useState("claude-code");
+  const [active, setActive] = useState("knowledge-base");
   const [copied, setCopied] = useState(false);
+  const [dlName, setDlName] = useState("");
+  const [dlEmail, setDlEmail] = useState("");
+  const [downloading, setDownloading] = useState(false);
   const current = platforms.find((p) => p.id === active)!;
 
   const handleCopy = async () => {
@@ -73,6 +86,28 @@ export default function Platforms() {
     }
   };
 
+  const handleDownload = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setDownloading(true);
+
+    try {
+      await fetch(DOWNLOAD_FORM_URL, {
+        method: "POST",
+        body: JSON.stringify({ name: dlName, email: dlEmail, action: "knowledge-base-download" }),
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+      });
+    } catch {
+      // Continue with download even if tracking fails
+    }
+
+    // Trigger download
+    const link = document.createElement("a");
+    link.href = `${process.env.NEXT_PUBLIC_BASE_PATH || "/ggp"}/ggp-knowledge-base.zip`;
+    link.download = "ggp-knowledge-base.zip";
+    link.click();
+    setDownloading(false);
+  };
+
   return (
     <section id="platforms" className="section-gap bg-almond/20">
       <div className="section-container">
@@ -80,7 +115,8 @@ export default function Platforms() {
           Platforms
         </h2>
         <p className="text-center text-wine/70 max-w-2xl mx-auto mb-12">
-          Choose your platform and copy the ready-made template.
+          Download the knowledge base or copy a ready-made template for your
+          platform.
         </p>
 
         {/* Tabs */}
@@ -118,41 +154,98 @@ export default function Platforms() {
           aria-labelledby={`tab-${current.id}`}
           className="card max-w-4xl mx-auto"
         >
-          <h3 className="font-serif font-semibold text-xl text-wine mb-4 flex items-center gap-3">
-            <span className="w-10 h-10 rounded-full bg-terracotta text-ivory font-mono font-semibold text-sm flex items-center justify-center">
-              {current.icon}
-            </span>
-            {current.name}
-          </h3>
-          <p className="text-wine/80 mb-6">{current.instruction}</p>
+          {/* Knowledge Base download tab */}
+          {current.isDownload && (
+            <>
+              <h3 className="font-serif font-semibold text-xl text-wine mb-2 flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-terracotta text-ivory font-mono font-semibold text-xs flex items-center justify-center">
+                  KB
+                </span>
+                Knowledge Base
+              </h3>
+              <p className="text-wine/80 mb-6">
+                Download 4 consolidated PDF files ready to upload as knowledge
+                base documents in Claude Projects or any AI platform that
+                supports file uploads.
+              </p>
 
-          {/* Code block with copy button */}
-          {current.template && (
-            <div className="relative">
-              <button
-                onClick={handleCopy}
-                className="absolute top-3 right-3 z-10 px-3 py-1.5 bg-terracotta text-ivory font-sans text-xs font-semibold rounded-bvvg hover:bg-clay transition-colors"
-              >
-                {copied ? "Copied!" : "Copy"}
-              </button>
-              <pre className="bg-wine/5 border border-almond rounded-bvvg p-4 pt-12 font-mono text-xs text-wine/80 leading-relaxed overflow-auto max-h-96">
-                {current.template}
-              </pre>
-            </div>
+              <div className="space-y-3 mb-8">
+                {kbFiles.map((f) => (
+                  <div
+                    key={f.name}
+                    className="flex items-start gap-3 text-sm"
+                  >
+                    <span className="text-terracotta mt-0.5 flex-shrink-0 font-mono font-semibold">
+                      PDF
+                    </span>
+                    <div>
+                      <p className="font-semibold text-wine">{f.name}</p>
+                      <p className="text-wine/60">{f.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <form onSubmit={handleDownload} className="space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <input
+                    type="text"
+                    value={dlName}
+                    onChange={(e) => setDlName(e.target.value)}
+                    required
+                    placeholder="Your name"
+                    className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
+                  />
+                  <input
+                    type="email"
+                    value={dlEmail}
+                    onChange={(e) => setDlEmail(e.target.value)}
+                    required
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={downloading}
+                  className="btn-primary w-full justify-center disabled:opacity-60"
+                >
+                  {downloading ? "Preparing\u2026" : "Download Knowledge Base (.zip)"}
+                </button>
+                <p className="text-xs text-wine/50 text-center">
+                  Your info helps us understand who uses GGP. We never share
+                  your data.
+                </p>
+              </form>
+            </>
           )}
 
-          {/* Step-by-step for Claude Code */}
-          {current.steps && (
-            <ol className="space-y-4">
-              {current.steps.map((step, i) => (
-                <li key={i} className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-almond/60 text-wine font-mono font-semibold text-sm flex items-center justify-center">
-                    {i + 1}
-                  </span>
-                  <p className="text-wine/80 leading-relaxed pt-0.5">{step}</p>
-                </li>
-              ))}
-            </ol>
+          {/* Platform template tabs */}
+          {!current.isDownload && (
+            <>
+              <h3 className="font-serif font-semibold text-xl text-wine mb-4 flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-terracotta text-ivory font-mono font-semibold text-sm flex items-center justify-center">
+                  {current.icon}
+                </span>
+                {current.name}
+              </h3>
+              <p className="text-wine/80 mb-6">{current.instruction}</p>
+
+              {/* Code block with copy button */}
+              {current.template && (
+                <div className="relative">
+                  <button
+                    onClick={handleCopy}
+                    className="absolute top-3 right-3 z-10 px-3 py-1.5 bg-terracotta text-ivory font-sans text-xs font-semibold rounded-bvvg hover:bg-clay transition-colors"
+                  >
+                    {copied ? "Copied!" : "Copy"}
+                  </button>
+                  <pre className="bg-wine/5 border border-almond rounded-bvvg p-4 pt-12 font-mono text-xs text-wine/80 leading-relaxed overflow-auto max-h-96">
+                    {current.template}
+                  </pre>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

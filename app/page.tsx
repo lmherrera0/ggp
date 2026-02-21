@@ -6,8 +6,8 @@ import SourceTiers from "@/components/SourceTiers";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import Platforms from "@/components/Platforms";
-import FileStructure from "@/components/FileStructure";
 import CTA from "@/components/CTA";
+import Feedback from "@/components/Feedback";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -22,8 +22,8 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <Platforms />
-        <FileStructure />
         <CTA />
+        <Feedback />
       </main>
       <Footer />
     </>
