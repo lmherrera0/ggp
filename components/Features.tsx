@@ -24,7 +24,7 @@ const features = [
       "Structured consulting deliverables: SWOT, gap analysis, benchmarks, cost-benefit, maturity assessment, stakeholder analysis, and use cases.",
   },
   {
-    title: "Consulting Etiquette",
+    title: "Professional Etiquette",
     stat: "7 golden rules",
     description:
       "Professional conduct guardrails including language reframing \u2014 converting dangerous phrases into professional alternatives.",

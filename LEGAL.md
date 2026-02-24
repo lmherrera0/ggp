@@ -111,7 +111,7 @@ This framework was developed collaboratively between the Author and Anthropic's 
 9. The chain-of-thought reasoning gate and pre-creation compliance verification (12-point gate)
 10. The post-creation validation gate (11-point checklist)
 11. The platform-specific implementation guides (Claude, ChatGPT, Google Gems, Copilot)
-12. The consulting etiquette framework ("The 7 Golden Rules") and prohibited language patterns database
+12. The professional etiquette framework ("The 7 Golden Rules") and prohibited language patterns database
 
 **Tier C — Integration & Ecosystem Design**
 
@@ -308,7 +308,7 @@ By using the Grounded Gate Protocol (GGP), you acknowledge that you have read, u
 | 1.0 | December 2025 | Initial Zero-Trust framework concept |
 | 2.0 | December 2025 | Introduced visual markers, platform-specific adapters |
 | 3.0 | January 2026 | Added anti-loop fatigue system, [A][B][C] user control options, clean output step, consolidated documentation |
-| 4.2 | January 2026 | Channel system expansion (22 channels + 7 analysis templates); platform adapters (Claude, ChatGPT, Gems, Copilot); BVVG integration; consulting etiquette reference |
+| 4.2 | January 2026 | Channel system expansion (22 channels + 7 analysis templates); platform adapters (Claude, ChatGPT, Gems, Copilot); BVVG integration; professional etiquette reference |
 | 4.3 | February 2026 | Updated Author attribution to legal name; added CC-BY-NC-SA 4.0 licence; added personal IP declaration and employer separation clause; added data protection statement; added GDPR-compliant change notification; added GGP markers; aligned with BVVG brand compliance |
 
 
