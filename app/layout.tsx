@@ -29,7 +29,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lmherrera0.github.io"),
-  title: "Grounded Gate Protocol (GGP) \u2014 Anti-Hallucination Framework",
+  title: "Grounded Gate Protocol (GGP) — Anti-Hallucination Framework",
   description:
     "Open-source anti-hallucination framework for AI-generated professional communications. Visual markers, source verification, and risk screening.",
   openGraph: {

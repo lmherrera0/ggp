@@ -1,49 +1,18 @@
-const phases = [
-  {
-    number: "1",
-    title: "Load Rules",
-    description:
-      "GGP loads its core rules \u2014 either the compact QUICK_REFERENCE card (Fast Mode) or all individual reference files (Deep Audit). This includes markers, source tiers, citation format, prohibited language, and the 8 non-negotiable rules.",
-    items: [
-      "Fast Mode: compact rules card",
-      "Deep Audit: full reference files",
-      "8 non-negotiable rules loaded",
-    ],
-  },
-  {
-    number: "2",
-    title: "Load Channel + Conditionals",
-    description:
-      "GGP identifies the target channel and loads the matching template. Conditional modules activate based on content type \u2014 data analytics, analysis deliverables, cross-platform deployment, or style learning from your examples.",
-    items: [
-      "Channel template selected",
-      "Conditional modules activated",
-      "Style learned from examples",
-    ],
-  },
-  {
-    number: "3",
-    title: "Create + Validate + Deliver",
-    description:
-      "Content is classified, every claim audited with markers, and iteration controlled. The Reasoning Gate separates facts from inferences. Devil\u2019s Advocate scores 8 dimensions (max 24). The Validation Gate requires 8/8 before delivery.",
-    items: [
-      "Information audit with markers",
-      "Devil\u2019s Advocate risk screening",
-      "8/8 validation gate required",
-    ],
-  },
-];
+"use client";
+
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function HowItWorks() {
+  const { t } = useTranslation();
+
   return (
     <section id="how-it-works" className="section-gap">
       <div className="section-container">
         <h2 className="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">
-          How It Works
+          {t.howItWorks.title}
         </h2>
         <p className="text-center text-wine/70 max-w-2xl mx-auto mb-12">
-          GGP operates in a 3-phase cycle \u2014 the same flow whether you use
-          Fast Mode or Deep Audit.
+          {t.howItWorks.subtitle}
         </p>
 
         <div className="relative">
@@ -51,12 +20,10 @@ export default function HowItWorks() {
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-almond -translate-x-1/2" />
 
           <div className="grid gap-8 lg:gap-12">
-            {phases.map((phase, i) => (
+            {t.howItWorks.phases.map((phase, i) => (
               <div
-                key={phase.number}
-                className={`lg:grid lg:grid-cols-2 lg:gap-12 items-center ${
-                  i % 2 === 1 ? "" : ""
-                }`}
+                key={i}
+                className="lg:grid lg:grid-cols-2 lg:gap-12 items-center"
               >
                 <div
                   className={`${
@@ -66,7 +33,7 @@ export default function HowItWorks() {
                   <div className="card">
                     <div className="flex items-center gap-4 mb-4">
                       <span className="flex-shrink-0 w-12 h-12 rounded-full bg-terracotta text-ivory font-serif font-bold text-xl flex items-center justify-center">
-                        {phase.number}
+                        {i + 1}
                       </span>
                       <h3 className="font-serif font-bold text-2xl text-wine">
                         {phase.title}
@@ -105,21 +72,23 @@ export default function HowItWorks() {
         {/* Mode comparison */}
         <div className="mt-12 card max-w-2xl mx-auto">
           <h3 className="font-serif font-semibold text-lg text-wine mb-4 text-center">
-            Two Modes, Same Rules
+            {t.howItWorks.modeTitle}
           </h3>
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div className="text-center p-4 bg-ivory rounded-bvvg">
-              <p className="font-semibold text-terracotta mb-1">Fast Mode</p>
+              <p className="font-semibold text-terracotta mb-1">
+                {t.howItWorks.fastMode.title}
+              </p>
               <p className="text-wine/70">
-                Default for any task. Compact rules card with shorthand
-                checkpoints.
+                {t.howItWorks.fastMode.description}
               </p>
             </div>
             <div className="text-center p-4 bg-ivory rounded-bvvg">
-              <p className="font-semibold text-terracotta mb-1">Deep Audit</p>
+              <p className="font-semibold text-terracotta mb-1">
+                {t.howItWorks.deepAudit.title}
+              </p>
               <p className="text-wine/70">
-                For high-stakes deliverables. Full reference files with verbose
-                tables.
+                {t.howItWorks.deepAudit.description}
               </p>
             </div>
           </div>

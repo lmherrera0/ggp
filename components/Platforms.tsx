@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "@/context/LanguageContext";
 import {
   claudeTemplate,
   chatgptTemplate,
@@ -9,71 +10,47 @@ import {
   skillTemplate,
 } from "./platformTemplates";
 
-const platforms = [
-  {
-    id: "knowledge-base",
-    name: "Knowledge Base",
-    icon: "KB",
-    instruction: "",
-    template: null as string | null,
-    isDownload: true,
-  },
-  {
-    id: "claude-projects",
-    name: "Claude Projects",
-    icon: "CP",
-    instruction:
-      "Copy the template below and paste it into your Claude Project instructions (Projects \u2192 Edit Project \u2192 Instructions).",
-    template: claudeTemplate,
-    isDownload: false,
-  },
-  {
-    id: "chatgpt",
-    name: "ChatGPT",
-    icon: "G",
-    instruction:
-      "Copy the template below and paste it into your GPT Instructions or ChatGPT Project instructions.",
-    template: chatgptTemplate,
-    isDownload: false,
-  },
-  {
-    id: "copilot",
-    name: "Copilot",
-    icon: "Co",
-    instruction:
-      "Copy the template below and paste it into your Copilot Agent instructions.",
-    template: copilotTemplate,
-    isDownload: false,
-  },
-  {
-    id: "google-gems",
-    name: "Google Gems",
-    icon: "Ge",
-    instruction:
-      "Copy the template below and paste it into your Gem instructions.",
-    template: googleGemsTemplate,
-    isDownload: false,
-  },
-  {
-    id: "skill",
-    name: "Skill",
-    icon: "SK",
-    instruction:
-      "Install GGP as a native Claude Code or Cowork skill. See the guide below for setup instructions.",
-    template: skillTemplate,
-    isDownload: false,
-  },
+type PlatformId = "knowledge-base" | "claude-projects" | "chatgpt" | "copilot" | "google-gems" | "skill";
+
+interface PlatformDef {
+  id: PlatformId;
+  nameKey: keyof typeof nameMap;
+  icon: string;
+  template: string | null;
+  isDownload: boolean;
+}
+
+const nameMap = {
+  knowledgeBase: "knowledge-base",
+  claudeProjects: "claude-projects",
+  chatgpt: "chatgpt",
+  copilot: "copilot",
+  googleGems: "google-gems",
+  skill: "skill",
+} as const;
+
+const platforms: PlatformDef[] = [
+  { id: "knowledge-base", nameKey: "knowledgeBase", icon: "KB", template: null, isDownload: true },
+  { id: "claude-projects", nameKey: "claudeProjects", icon: "CP", template: claudeTemplate, isDownload: false },
+  { id: "chatgpt", nameKey: "chatgpt", icon: "G", template: chatgptTemplate, isDownload: false },
+  { id: "copilot", nameKey: "copilot", icon: "Co", template: copilotTemplate, isDownload: false },
+  { id: "google-gems", nameKey: "googleGems", icon: "Ge", template: googleGemsTemplate, isDownload: false },
+  { id: "skill", nameKey: "skill", icon: "SK", template: skillTemplate, isDownload: false },
 ];
 
-const kbFiles = [
-  { name: "GGP-Core-Rules.pdf", desc: "SKILL.md + general guidelines (source tiers, etiquette, reputation, data integrity, metrics)" },
-  { name: "GGP-Channel-Templates.pdf", desc: "All 22 channel templates (email, LinkedIn, HBR, presentations, and more)" },
-  { name: "GGP-Analysis-Templates.pdf", desc: "7 analysis templates (SWOT, gap analysis, benchmarks, cost-benefit, and more)" },
-  { name: "GGP-About.pdf", desc: "Introduction, executive summary, and legal information" },
-];
+const instructionMap: Record<string, keyof Translations["platforms"]["instructions"]> = {
+  "claude-projects": "claude",
+  chatgpt: "chatgpt",
+  copilot: "copilot",
+  "google-gems": "googleGems",
+  skill: "skill",
+};
+
+import type { Translations } from "@/translations/types";
 
 export default function Platforms() {
-  const [active, setActive] = useState("knowledge-base");
+  const { t } = useTranslation();
+  const [active, setActive] = useState<PlatformId>("knowledge-base");
   const [copied, setCopied] = useState(false);
   const current = platforms.find((p) => p.id === active)!;
 
@@ -92,15 +69,16 @@ export default function Platforms() {
     link.click();
   };
 
+  const tabName = (p: PlatformDef) => t.platforms.tabs[p.nameKey];
+
   return (
     <section id="platforms" className="section-gap bg-almond/20">
       <div className="section-container">
         <h2 className="font-serif font-bold text-3xl sm:text-4xl text-terracotta text-center mb-4">
-          Platforms
+          {t.platforms.title}
         </h2>
         <p className="text-center text-wine/70 max-w-2xl mx-auto mb-12">
-          Download the knowledge base or copy a ready-made template for your
-          platform.
+          {t.platforms.subtitle}
         </p>
 
         {/* Tabs */}
@@ -126,7 +104,7 @@ export default function Platforms() {
                   : "bg-ivory text-wine border border-almond hover:border-terracotta"
               }`}
             >
-              {p.name}
+              {tabName(p)}
             </button>
           ))}
         </div>
@@ -145,16 +123,14 @@ export default function Platforms() {
                 <span className="w-10 h-10 rounded-full bg-terracotta text-ivory font-mono font-semibold text-xs flex items-center justify-center">
                   KB
                 </span>
-                Knowledge Base
+                {t.platforms.kb.title}
               </h3>
               <p className="text-wine/80 mb-6">
-                Download 4 consolidated PDF files ready to upload as knowledge
-                base documents in Claude Projects or any AI platform that
-                supports file uploads.
+                {t.platforms.kb.description}
               </p>
 
               <div className="space-y-3 mb-8">
-                {kbFiles.map((f) => (
+                {t.platforms.kb.files.map((f) => (
                   <div
                     key={f.name}
                     className="flex items-start gap-3 text-sm"
@@ -174,10 +150,10 @@ export default function Platforms() {
                 onClick={handleDownload}
                 className="btn-primary w-full justify-center"
               >
-                Download Knowledge Base (.zip)
+                {t.platforms.kb.downloadBtn}
               </button>
-              <p className="text-xs text-wine/50 text-center mt-3">
-                Free download. No registration required.
+              <p className="text-xs text-wine/60 text-center mt-3">
+                {t.platforms.kb.downloadNote}
               </p>
             </>
           )}
@@ -189,9 +165,11 @@ export default function Platforms() {
                 <span className="w-10 h-10 rounded-full bg-terracotta text-ivory font-mono font-semibold text-sm flex items-center justify-center">
                   {current.icon}
                 </span>
-                {current.name}
+                {tabName(current)}
               </h3>
-              <p className="text-wine/80 mb-6">{current.instruction}</p>
+              <p className="text-wine/80 mb-6">
+                {t.platforms.instructions[instructionMap[current.id]]}
+              </p>
 
               {/* Code block with copy button */}
               {current.template && (
@@ -200,7 +178,7 @@ export default function Platforms() {
                     onClick={handleCopy}
                     className="absolute top-3 right-3 z-10 px-3 py-1.5 bg-terracotta text-ivory font-sans text-xs font-semibold rounded-bvvg hover:bg-clay transition-colors"
                   >
-                    {copied ? "Copied!" : "Copy"}
+                    {copied ? t.platforms.copiedBtn : t.platforms.copyBtn}
                   </button>
                   <pre className="bg-wine/5 border border-almond rounded-bvvg p-4 pt-12 font-mono text-xs text-wine/80 leading-relaxed overflow-auto max-h-96">
                     {current.template}

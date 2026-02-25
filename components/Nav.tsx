@@ -1,26 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const links = [
-  { href: "#problem", label: "Problem" },
-  { href: "#markers", label: "Markers" },
-  { href: "#features", label: "Features" },
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#platforms", label: "Platforms" },
-  { href: "#research", label: "Research" },
-  { href: "#feedback", label: "Feedback" },
-];
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function Nav() {
+  const { t, lang, setLang } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: "#problem", label: t.nav.problem },
+    { href: "#markers", label: t.nav.markers },
+    { href: "#features", label: t.nav.features },
+    { href: "#how-it-works", label: t.nav.howItWorks },
+    { href: "#platforms", label: t.nav.platforms },
+    { href: "#research", label: t.nav.research },
+    { href: "#feedback", label: t.nav.feedback },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const toggleLang = () => setLang(lang === "en" ? "es" : "en");
 
   return (
     <nav
@@ -35,7 +39,7 @@ export default function Nav() {
             scrolled ? "text-wine" : "text-ivory"
           }`}
         >
-          GGP
+          {t.nav.brand}
         </a>
 
         {/* Desktop links */}
@@ -53,18 +57,42 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
+          <button
+            onClick={toggleLang}
+            className={`font-sans text-xs font-bold px-2.5 py-1 rounded-bvvg border transition-colors ${
+              scrolled
+                ? "border-terracotta text-terracotta hover:bg-terracotta hover:text-ivory"
+                : "border-ivory/60 text-ivory/80 hover:bg-ivory/10 hover:text-ivory"
+            }`}
+            aria-label={lang === "en" ? "Cambiar a espa\u00F1ol" : "Switch to English"}
+          >
+            {lang === "en" ? "ES" : "EN"}
+          </button>
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className={`md:hidden font-sans text-sm font-semibold ${
-            scrolled ? "text-wine" : "text-ivory"
-          }`}
-          aria-label="Toggle navigation"
-        >
-          {open ? "\u2715" : "\u2630"}
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleLang}
+            className={`font-sans text-xs font-bold px-2 py-1 rounded-bvvg border transition-colors ${
+              scrolled
+                ? "border-terracotta text-terracotta"
+                : "border-ivory/60 text-ivory/80"
+            }`}
+            aria-label={lang === "en" ? "Cambiar a espa\u00F1ol" : "Switch to English"}
+          >
+            {lang === "en" ? "ES" : "EN"}
+          </button>
+          <button
+            onClick={() => setOpen(!open)}
+            className={`font-sans text-sm font-semibold ${
+              scrolled ? "text-wine" : "text-ivory"
+            }`}
+            aria-label="Toggle navigation"
+          >
+            {open ? "\u2715" : "\u2630"}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
