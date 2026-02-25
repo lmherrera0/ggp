@@ -3,13 +3,13 @@ const architectureComponents = [
     number: "1",
     title: "Calibrated Source Hierarchy",
     description:
-      "Four-tier source classification with explicit verification markers enabling independent human validation.",
+      "Four-tier source hierarchy defined by epistemological criteria \u2014 institutional backing, peer corroboration, methodological transparency \u2014 with five colour-coded verification markers enabling independent human validation.",
   },
   {
     number: "2",
     title: "Adversarial Quality Gate",
     description:
-      "Quantified risk scoring across five professional risk categories, three behavioural tests, cognitive bias detection, and logical fallacy screening.",
+      "Quantified risk scoring across eight dimensions (scored 1\u20133, max 24) with cognitive bias detection and logical fallacy screening.",
   },
   {
     number: "3",
@@ -34,15 +34,18 @@ const architectureComponents = [
 const theoreticalFoundations = [
   {
     label: "Accountability Theory",
-    detail: "Defensible processes for consequential outputs",
+    detail:
+      "Every claim traceable, every verification step auditable (Bovens, 2007)",
   },
   {
     label: "Epistemology of Testimony",
-    detail: "Calibrated trust based on source reliability",
+    detail:
+      "Trust calibrated by institutional backing, peer corroboration, and methodological transparency (Coady, 1992; Lackey, 2008)",
   },
   {
     label: "Information Governance",
-    detail: "Systematic quality management for AI-generated content",
+    detail:
+      "Quality management embedded in the production workflow, not post-hoc review (Smallwood, 2014)",
   },
 ];
 
@@ -144,6 +147,46 @@ export default function Research() {
           ))}
         </div>
 
+        {/* Paper features */}
+        <div className="card max-w-4xl mx-auto mb-12">
+          <h3 className="font-serif font-semibold text-lg text-wine mb-6 text-center">
+            Key Paper Features Implemented in GGP
+          </h3>
+          <div className="grid gap-6 sm:grid-cols-3">
+            <div className="text-center p-4 bg-ivory rounded-bvvg">
+              <p className="font-semibold text-terracotta text-sm mb-2">
+                Tree of Thought
+              </p>
+              <p className="text-xs text-wine/70 leading-relaxed">
+                Explores 2&ndash;3 alternative resolution paths in parallel for
+                each inference or gap. Evaluates consequences against audience
+                sensitivity, channel risk, and regulatory exposure. Ranks by
+                defensibility.
+              </p>
+            </div>
+            <div className="text-center p-4 bg-ivory rounded-bvvg">
+              <p className="font-semibold text-terracotta text-sm mb-2">
+                Cognitive Bias Detection
+              </p>
+              <p className="text-xs text-wine/70 leading-relaxed">
+                Screens for 4 biases: Confirmation, Survivorship, Status Quo, and
+                Recency. Named biases are flagged with actionable markers, not
+                vague warnings.
+              </p>
+            </div>
+            <div className="text-center p-4 bg-ivory rounded-bvvg">
+              <p className="font-semibold text-terracotta text-sm mb-2">
+                Logical Risk Patterns
+              </p>
+              <p className="text-xs text-wine/70 leading-relaxed">
+                Detects 4 fallacies: False Dilemma, Hasty Generalisation, False
+                Causality, and Non Sequitur. Each pattern triggers a specific
+                rewrite recommendation.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Theoretical foundations */}
         <div className="card max-w-3xl mx-auto">
           <h3 className="font-serif font-semibold text-lg text-wine mb-4 text-center">
@@ -162,7 +205,11 @@ export default function Research() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-wine/50 text-center mt-4">
+          <p className="text-sm text-wine/60 text-center mt-4 italic">
+            Core design principle: verification is a workflow property, not a
+            model property.
+          </p>
+          <p className="text-xs text-wine/50 text-center mt-3">
             Herrera, L.M. (2026). DOI:{" "}
             <a
               href="https://doi.org/10.5281/zenodo.18751614"

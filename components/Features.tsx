@@ -7,9 +7,9 @@ const features = [
   },
   {
     title: "Devil\u2019s Advocate",
-    stat: "5 checks + 3 tests",
+    stat: "8 dimensions (max 24)",
     description:
-      "Mandatory risk screening on all significant communications. Hostile Reader, Screenshot, and CEO tests catch problems before they reach your audience.",
+      "Mandatory risk screening on all significant communications. Eight dimensions scored 1\u20133 \u2014 including Hostile Reader, Screenshot, and CEO tests \u2014 catch problems before they reach your audience.",
   },
   {
     title: "Channel Templates",
@@ -22,6 +22,12 @@ const features = [
     stat: "7 templates",
     description:
       "Structured consulting deliverables: SWOT, gap analysis, benchmarks, cost-benefit, maturity assessment, stakeholder analysis, and use cases.",
+  },
+  {
+    title: "Reasoning Safeguards",
+    stat: "4 biases + 4 patterns",
+    description:
+      "Cognitive bias detection (confirmation, survivorship, status quo, recency) and logical risk pattern screening (false dilemma, hasty generalisation, false causality, non sequitur). Tree of Thought reasoning explores multiple paths before committing.",
   },
   {
     title: "Professional Etiquette",
@@ -43,9 +49,9 @@ const features = [
   },
   {
     title: "Multi-Platform",
-    stat: "5 platforms",
+    stat: "6 platforms",
     description:
-      "Works on Claude Code, Claude Projects, ChatGPT, Microsoft Copilot, and Google Gems with platform-specific templates.",
+      "Works as a Claude Code skill, on Claude Projects, ChatGPT, Microsoft Copilot, and Google Gems with platform-specific templates.",
   },
 ];
 

@@ -273,6 +273,74 @@ IF data deliverable, also apply:
 8. Never exceed 2 clarification rounds without user choosing [C]
 </non_negotiable>`;
 
+export const skillTemplate = `# GGP as a Claude Code / Cowork Skill
+
+GGP can run as a native skill in Claude Code (Anthropic's CLI agent) or any
+Cowork-compatible environment. This gives you real-time hallucination governance
+inside your development workflow — no copy-paste needed.
+
+## Repository
+
+GitHub: https://github.com/lmherrera0/ggp
+
+## Quick Install
+
+1. Clone the repo into your skills directory:
+
+   git clone https://github.com/lmherrera0/ggp.git \\
+     ~/.claude/skills/ggp
+
+2. Or, if using Cowork, add it as a plugin:
+
+   cowork plugin add https://github.com/lmherrera0/ggp.git
+
+3. Verify the skill is loaded:
+
+   claude /ggp --help
+
+## Directory Structure
+
+skills/ggp-public/
+├── SKILL.md                          # Main entry point (execution rules, phases)
+├── references/
+│   ├── general-guidelines/
+│   │   ├── QUICK_REFERENCE.md        # Compact rules card (Fast Mode reads this)
+│   │   ├── 1.source-analysis.md      # Source tiers, citations, red flags
+│   │   ├── 2.professional-etiquette.md # 7 golden rules, language reframing
+│   │   ├── 3.reputation-protection.md  # Devil's Advocate, risk scoring
+│   │   ├── 4.data-analytics-expertise.md # Data verification, anti-hallucination
+│   │   └── 5.success-metrics.md      # KPIs for measuring GGP effectiveness
+│   ├── channels/                     # 22 channel templates
+│   ├── analysis-templates/           # 7 analysis templates (SWOT, gap, etc.)
+│   └── platforms/                    # Platform-specific adapters
+├── examples/                         # Style learning from past examples
+└── about-ggp/                        # Introduction, legal, licensing
+
+## Usage
+
+Once installed, GGP activates automatically when you request professional
+content (emails, LinkedIn posts, reports, presentations, etc.).
+
+Two modes:
+- Fast Mode (default): Reads QUICK_REFERENCE.md for compact rules
+- Deep Audit: Triggered by "deep audit" or "full review" — reads all reference files
+
+## What You Get
+
+- 4-tier source verification with visual markers
+- 8-dimension Devil's Advocate risk scoring (max 24)
+- Cognitive bias detection (4 biases)
+- Logical risk pattern screening (4 patterns)
+- Tree of Thought reasoning for complex tasks
+- 22 channel templates + 7 analysis templates
+- Anti-fatigue iteration control
+- Professional etiquette guardrails
+
+## License
+
+CC BY 4.0 — Free to use, modify, and share with attribution.
+`;
+
 export const chatgptTemplate = `# Grounded Gate Protocol (GGP) v4.5
 
 You are an assistant operating under the Grounded Gate Protocol. Core principle: "Nothing passes unverified."

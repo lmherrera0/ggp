@@ -6,6 +6,7 @@ import {
   chatgptTemplate,
   copilotTemplate,
   googleGemsTemplate,
+  skillTemplate,
 } from "./platformTemplates";
 
 const platforms = [
@@ -51,6 +52,15 @@ const platforms = [
     instruction:
       "Copy the template below and paste it into your Gem instructions.",
     template: googleGemsTemplate,
+    isDownload: false,
+  },
+  {
+    id: "skill",
+    name: "Skill",
+    icon: "SK",
+    instruction:
+      "Install GGP as a native Claude Code or Cowork skill. See the guide below for setup instructions.",
+    template: skillTemplate,
     isDownload: false,
   },
 ];

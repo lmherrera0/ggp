@@ -37,7 +37,7 @@ export default function Feedback() {
         </h2>
         <p className="text-center text-wine/70 max-w-2xl mx-auto mb-12">
           Help us improve GGP. Tell us how you use it, what works, and what you
-          would like to see next. All feedback is anonymous.
+          would like to see next.
         </p>
 
         {submitted ? (
@@ -54,26 +54,80 @@ export default function Feedback() {
             onSubmit={handleSubmit}
             className="card max-w-2xl mx-auto space-y-5"
           >
-            <div>
-              <label
-                htmlFor="fb-platform"
-                className="block text-sm font-sans font-semibold text-wine mb-1"
-              >
-                Platform
-              </label>
-              <select
-                id="fb-platform"
-                name="platform"
-                className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
-              >
-                <option value="">Select your platform</option>
-                <option value="Claude Projects">Claude Projects</option>
-                <option value="ChatGPT">ChatGPT</option>
-                <option value="Copilot">Microsoft Copilot</option>
-                <option value="Google Gems">Google Gems</option>
-                <option value="Claude Code">Claude Code</option>
-                <option value="Other">Other</option>
-              </select>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="fb-name"
+                  className="block text-sm font-sans font-semibold text-wine mb-1"
+                >
+                  Name <span className="font-normal text-wine/50">(optional)</span>
+                </label>
+                <input
+                  type="text"
+                  id="fb-name"
+                  name="name"
+                  className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="fb-email"
+                  className="block text-sm font-sans font-semibold text-wine mb-1"
+                >
+                  Email <span className="font-normal text-wine/50">(optional)</span>
+                </label>
+                <input
+                  type="email"
+                  id="fb-email"
+                  name="email"
+                  className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="fb-type"
+                  className="block text-sm font-sans font-semibold text-wine mb-1"
+                >
+                  Message Type
+                </label>
+                <select
+                  id="fb-type"
+                  name="message_type"
+                  className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
+                >
+                  <option value="Feedback">Feedback</option>
+                  <option value="Feature Request">Feature Request</option>
+                  <option value="Bug Report">Bug Report</option>
+                  <option value="General Question">General Question</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  htmlFor="fb-platform"
+                  className="block text-sm font-sans font-semibold text-wine mb-1"
+                >
+                  Platform
+                </label>
+                <select
+                  id="fb-platform"
+                  name="platform"
+                  className="w-full px-4 py-2.5 border border-almond rounded-bvvg bg-ivory text-wine font-sans text-sm focus:outline-none focus:border-terracotta transition-colors"
+                >
+                  <option value="">Select your platform</option>
+                  <option value="Claude Projects">Claude Projects</option>
+                  <option value="ChatGPT">ChatGPT</option>
+                  <option value="Copilot">Microsoft Copilot</option>
+                  <option value="Google Gems">Google Gems</option>
+                  <option value="Claude Code">Claude Code</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
             </div>
 
             <div>
@@ -104,7 +158,7 @@ export default function Feedback() {
             </button>
 
             <p className="text-xs text-wine/50 text-center">
-              Anonymous. No personal data collected.
+              Name and email are optional. Only the message is required.
             </p>
           </form>
         )}

@@ -25,7 +25,7 @@ const phases = [
     number: "3",
     title: "Create + Validate + Deliver",
     description:
-      "Content is classified, every claim audited with markers, and iteration controlled. The Reasoning Gate separates facts from inferences. Devil\u2019s Advocate runs 5 checks + 3 tests. The Validation Gate requires 8/8 before delivery.",
+      "Content is classified, every claim audited with markers, and iteration controlled. The Reasoning Gate separates facts from inferences. Devil\u2019s Advocate scores 8 dimensions (max 24). The Validation Gate requires 8/8 before delivery.",
     items: [
       "Information audit with markers",
       "Devil\u2019s Advocate risk screening",
