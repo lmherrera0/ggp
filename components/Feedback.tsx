@@ -158,7 +158,7 @@ export default function Feedback() {
             <input type="hidden" name="_replyto" value="lizherrerajara+ggp@gmail.com" />
 
             {error && (
-              <p className="text-sm text-red-600 text-center">
+              <p className="text-sm text-terracotta font-semibold text-center">
                 {t.feedback.errorMessage}
               </p>
             )}

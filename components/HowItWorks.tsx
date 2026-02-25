@@ -76,7 +76,7 @@ export default function HowItWorks() {
           </h3>
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div className="text-center p-4 bg-ivory rounded-bvvg">
-              <p className="font-semibold text-terracotta mb-1">
+              <p className="font-semibold text-mahogany mb-1">
                 {t.howItWorks.fastMode.title}
               </p>
               <p className="text-wine/70">
@@ -84,7 +84,7 @@ export default function HowItWorks() {
               </p>
             </div>
             <div className="text-center p-4 bg-ivory rounded-bvvg">
-              <p className="font-semibold text-terracotta mb-1">
+              <p className="font-semibold text-mahogany mb-1">
                 {t.howItWorks.deepAudit.title}
               </p>
               <p className="text-wine/70">

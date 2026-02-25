@@ -17,7 +17,7 @@ export default function Features() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {t.features.items.map((f) => (
             <div key={f.title} className="card">
-              <p className="font-mono text-sm font-semibold text-terracotta mb-2">
+              <p className="font-mono text-sm font-semibold text-mahogany mb-2">
                 {f.stat}
               </p>
               <h3 className="font-serif font-semibold text-lg text-wine mb-2">

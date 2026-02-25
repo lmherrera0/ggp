@@ -28,7 +28,7 @@ export default function SourceTiers() {
                   {tier.label}
                 </span>
               </div>
-              <p className="text-xs font-mono text-terracotta mb-2">
+              <p className="text-xs font-mono text-mahogany mb-2">
                 {t.sourceTiers.trustLabel}: {tier.trust}
               </p>
               <p className="text-sm text-wine/70 leading-relaxed">

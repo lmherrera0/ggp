@@ -40,6 +40,6 @@ html {
   }
 
   .card {
-    @apply bg-white/60 border border-almond rounded-bvvg p-6 shadow-sm;
+    @apply bg-ivory border border-almond rounded-bvvg p-6 shadow-sm;
   }
 }

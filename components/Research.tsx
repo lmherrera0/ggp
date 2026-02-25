@@ -17,7 +17,7 @@ export default function Research() {
 
         {/* Paper card */}
         <div className="card max-w-4xl mx-auto mb-12">
-          <p className="font-mono text-xs font-semibold text-terracotta mb-3 uppercase tracking-wider">
+          <p className="font-mono text-xs font-semibold text-mahogany mb-3 uppercase tracking-wider">
             {t.research.paper.published}
           </p>
           <h3 className="font-serif font-bold text-xl sm:text-2xl text-wine mb-2 leading-tight">
@@ -100,7 +100,7 @@ export default function Research() {
           <div className="grid gap-6 sm:grid-cols-3">
             {t.research.paperFeatures.map((f, i) => (
               <div key={i} className="text-center p-4 bg-ivory rounded-bvvg">
-                <p className="font-semibold text-terracotta text-sm mb-2">
+                <p className="font-semibold text-mahogany text-sm mb-2">
                   {f.title}
                 </p>
                 <p className="text-xs text-wine/70 leading-relaxed">
@@ -122,7 +122,7 @@ export default function Research() {
                 key={f.label}
                 className="text-center p-4 bg-ivory rounded-bvvg"
               >
-                <p className="font-semibold text-terracotta text-sm mb-1">
+                <p className="font-semibold text-mahogany text-sm mb-1">
                   {f.label}
                 </p>
                 <p className="text-xs text-wine/70">{f.detail}</p>
