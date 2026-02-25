@@ -23,7 +23,7 @@ export default function Hero() {
             Get Started
           </a>
           <a
-            href="https://github.com/lmherrera0/ggp"
+            href="https://github.com/lmherrera0/ggp-skill"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border-2 border-almond text-almond font-sans font-semibold rounded-bvvg transition-colors duration-200 hover:bg-almond/10 text-base"

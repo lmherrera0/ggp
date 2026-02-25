@@ -281,18 +281,18 @@ inside your development workflow — no copy-paste needed.
 
 ## Repository
 
-GitHub: https://github.com/lmherrera0/ggp
+GitHub: https://github.com/lmherrera0/ggp-skill
 
 ## Quick Install
 
 1. Clone the repo into your skills directory:
 
-   git clone https://github.com/lmherrera0/ggp.git \\
+   git clone https://github.com/lmherrera0/ggp-skill.git \\
      ~/.claude/skills/ggp
 
 2. Or, if using Cowork, add it as a plugin:
 
-   cowork plugin add https://github.com/lmherrera0/ggp.git
+   cowork plugin add https://github.com/lmherrera0/ggp-skill.git
 
 3. Verify the skill is loaded:
 
