@@ -24,7 +24,7 @@ export default function Footer() {
               </a>
             </p>
             <a
-              href="https://github.com/lmherrera/ggp"
+              href="https://github.com/lmherrera0/ggp"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-clay hover:text-ivory transition-colors"
