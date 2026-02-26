@@ -1,5 +1,4 @@
 import type { Translations } from "./types";
-import { claudeTemplate, chatgptTemplate, copilotTemplate, googleGemsTemplate, skillTemplate } from "@/components/platformTemplates";
 
 export const en: Translations = {
   nav: {
