@@ -34,7 +34,7 @@ export const es: Translations = {
     title: "Marcadores Visuales",
     subtitle: "Cada afirmaci\u00F3n recibe una bandera de color para que veas exactamente qu\u00E9 est\u00E1 verificado, qu\u00E9 es una suposici\u00F3n y qu\u00E9 falta.",
     items: [
-      { label: "CONFIRMED", emoji: "\uD83D\uDFE2", color: "bg-sage", textColor: "text-sage", description: "Hecho verificado con fuente citada. Tier 1\u20133, cita completa, sin alertas." },
+      { label: "CONFIRMED", emoji: "\uD83D\uDFE2", color: "bg-sage", textColor: "text-sage", description: "Hecho verificado con fuente citada. Nivel 1\u20133, cita completa, sin alertas." },
       { label: "GAP", emoji: "\uD83D\uDD34", color: "bg-wine", textColor: "text-wine", description: "Informaci\u00F3n cr\u00EDtica faltante que debe completarse antes de la entrega." },
       { label: "INFERENCE", emoji: "\uD83D\uDFE1", color: "bg-terracotta", textColor: "text-terracotta", description: "Suposici\u00F3n declarada \u2014 razonada a partir de hechos confirmados pero sin fuente directa." },
       { label: "UNVERIFIED", emoji: "\uD83D\uDFE0", color: "bg-mahogany", textColor: "text-mahogany", description: "No se pudo verificar o solo se encontr\u00F3 una fuente de baja calidad. Necesita corroboraci\u00F3n." },
@@ -148,7 +148,7 @@ export const es: Translations = {
       { title: "Jerarqu\u00EDa Calibrada de Fuentes", description: "Jerarqu\u00EDa de fuentes de cuatro niveles definida por criterios epistemol\u00F3gicos \u2014 respaldo institucional, corroboraci\u00F3n por pares, transparencia metodol\u00F3gica \u2014 con cinco marcadores de verificaci\u00F3n codificados por color que permiten la validaci\u00F3n humana independiente." },
       { title: "Puerta de Calidad Adversarial", description: "Puntuaci\u00F3n de riesgo cuantificada en ocho dimensiones (puntuadas de 1 a 3, m\u00E1x 24) con detecci\u00F3n de sesgos cognitivos y evaluaci\u00F3n de falacias l\u00F3gicas." },
       { title: "Ejecuci\u00F3n de Doble Modo", description: "Modo R\u00E1pido para gobernanza cotidiana y Auditor\u00EDa Profunda para entregables de alto riesgo \u2014 mismo est\u00E1ndar de verificaci\u00F3n, profundidad adaptativa." },
-      { title: "Gobernanza Agnos\u0301tica de Canal", description: "Reglas de verificaci\u00F3n universales separadas de plantillas espec\u00EDficas de dominio en 22 canales de comunicaci\u00F3n profesional." },
+      { title: "Gobernanza Agnóstica de Canal", description: "Reglas de verificaci\u00F3n universales separadas de plantillas espec\u00EDficas de dominio en 22 canales de comunicaci\u00F3n profesional." },
       { title: "Despliegue Multiplataforma", description: "Adaptadores de plataforma para Claude, ChatGPT, Google Gems y Microsoft Copilot que garantizan una gobernanza consistente entre sistemas." },
     ],
     paperFeaturesTitle: "Caracter\u00EDsticas Clave del Art\u00EDculo Implementadas en GGP",
