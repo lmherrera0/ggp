@@ -155,7 +155,6 @@ export default function Feedback() {
             </div>
 
             <input type="hidden" name="_subject" value="GGP Website Feedback" />
-            <input type="hidden" name="_replyto" value="lizherrerajara+ggp@gmail.com" />
 
             {error && (
               <p className="text-sm text-terracotta font-semibold text-center">
