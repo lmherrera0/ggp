@@ -91,6 +91,121 @@ export const MARKERS = [
   { emoji: "⚠️", name: "RISK", def: "Reputational, legal, or credibility concern. Review before sending." },
 ];
 
+export const PLATFORMS_META = [
+  {
+    id: "copilot-studio",
+    label: "Copilot Studio",
+    subtitle: "Agent Builder",
+    icon: "∞",
+    charLimit: 8000,
+    charLimitNote: "8,000-character instruction limit in Copilot Studio Agent Builder",
+    titleStyle: { background: "linear-gradient(135deg,#0078D4 0%,#106EBE 100%)" },
+    titleTextColor: "text-white",
+    knowledgeLabel: "SharePoint / OneDrive",
+    knowledgeNote:
+      "Upload the 4 PDFs to the Knowledge section in Copilot Studio. SharePoint and OneDrive documents count as Tier 1 sources.",
+    tip: "OBJECTIVE-first format. XML tags (<system-constraint>, <execution-logic>, <rule>) and Python pseudocode are fully supported. YAML max 3 levels deep.",
+    showStarterPrompts: true,
+    showIdentity: true,
+    knowledgeFiles: [
+      { name: "GGP-Core-Rules.pdf",         desc: "Source tiers, markers, prohibited language, Devil's Advocate" },
+      { name: "GGP-About.pdf",              desc: "Framework overview, principles, and mode selection" },
+      { name: "GGP-Channel-Templates.pdf",  desc: "22 channel formats — email, LinkedIn, reports, and more" },
+      { name: "GGP-Analysis-Templates.pdf", desc: "7 consulting deliverables — SWOT, gap analysis, benchmarks" },
+    ],
+  },
+  {
+    id: "copilot-m365",
+    label: "M365 Copilot",
+    subtitle: "Agent Builder (Teams / Web)",
+    icon: "∞",
+    charLimit: 8000,
+    charLimitNote: "8,000-character instruction limit in M365 Copilot Agent Builder",
+    titleStyle: { background: "linear-gradient(135deg,#0078D4 0%,#106EBE 100%)" },
+    titleTextColor: "text-white",
+    knowledgeLabel: "SharePoint / OneDrive",
+    knowledgeNote:
+      "Upload the 4 PDFs to the Knowledge section. SharePoint and OneDrive documents count as Tier 1 sources.",
+    tip: "Markdown-only format — no XML tags, no YAML, no pseudocode. Use ## headers and numbered steps. This is the simpler Agent Builder inside Teams or copilot.microsoft.com.",
+    showStarterPrompts: true,
+    showIdentity: true,
+    knowledgeFiles: [
+      { name: "GGP-Core-Rules.pdf",         desc: "Source tiers, markers, prohibited language, Devil's Advocate" },
+      { name: "GGP-About.pdf",              desc: "Framework overview, principles, and mode selection" },
+      { name: "GGP-Channel-Templates.pdf",  desc: "22 channel formats — email, LinkedIn, reports, and more" },
+      { name: "GGP-Analysis-Templates.pdf", desc: "7 consulting deliverables — SWOT, gap analysis, benchmarks" },
+    ],
+  },
+  {
+    id: "chatgpt",
+    label: "ChatGPT",
+    subtitle: "GPT Builder",
+    icon: "◯",
+    charLimit: 8000,
+    charLimitNote: "~8,000-character instruction limit in GPT Builder",
+    titleStyle: { background: "#212121" },
+    titleTextColor: "text-white",
+    knowledgeLabel: "Knowledge Files",
+    knowledgeNote:
+      "Upload up to 20 files as GPT knowledge. Enables web browsing to verify claims before marking CONFIRMED.",
+    tip: "Markdown format — no XML tags. Numbered steps preferred. ChatGPT can browse the web — include verify instruction.",
+    showStarterPrompts: false,
+    showIdentity: false,
+    knowledgeFiles: [
+      { name: "GGP-Core-Rules.pdf",         desc: "Full source tier rules and high-risk language patterns" },
+      { name: "GGP-About.pdf",              desc: "Framework overview and etiquette guidelines" },
+      { name: "GGP-Channel-Templates.pdf",  desc: "22 channel formats for professional communications" },
+      { name: "GGP-Analysis-Templates.pdf", desc: "7 analysis templates — SWOT, gap, benchmarks" },
+    ],
+  },
+  {
+    id: "claude",
+    label: "Claude",
+    subtitle: "Project Instructions",
+    icon: "◈",
+    charLimit: 999999,
+    charLimitNote: "No character limit — Claude Projects allow unlimited instructions",
+    titleStyle: { background: "linear-gradient(135deg,#CC785C 0%,#B86B50 100%)" },
+    titleTextColor: "text-white",
+    knowledgeLabel: "Project Files",
+    knowledgeNote:
+      "Attach files directly to the Project. Claude supports XML tags natively — the template uses them for structured constraints.",
+    tip: "XML tags natively supported. No character limit — full GGP with all sections. Add files to the project as authoritative references.",
+    showStarterPrompts: false,
+    showIdentity: false,
+    knowledgeFiles: [
+      { name: "GGP-Core-Rules.pdf",         desc: "Source tiers, markers, and verification protocol" },
+      { name: "GGP-About.pdf",              desc: "Framework overview and mode selection" },
+      { name: "GGP-Channel-Templates.pdf",  desc: "22 channel format templates" },
+      { name: "GGP-Analysis-Templates.pdf", desc: "7 consulting analysis deliverables" },
+    ],
+  },
+  {
+    id: "gems",
+    label: "Google Gems",
+    subtitle: "Gem Instructions",
+    icon: "◆",
+    charLimit: 7000,
+    charLimitNote: "Short instruction limit — condensed template required",
+    titleStyle: { background: "linear-gradient(135deg,#1A73E8 0%,#1558B0 100%)" },
+    titleTextColor: "text-white",
+    knowledgeLabel: "Google Drive Files",
+    knowledgeNote:
+      "Attach files from Google Drive. Drive documents count as Tier 1 sources — reference them by name in the template.",
+    tip: "Plain text only — no XML, YAML, or pseudocode. Short sentences. Condensed format is intentional.",
+    showStarterPrompts: false,
+    showIdentity: false,
+    knowledgeFiles: [
+      { name: "GGP-Core-Rules.pdf",         desc: "Source tiers and verification rules" },
+      { name: "GGP-About.pdf",              desc: "Framework overview" },
+      { name: "GGP-Channel-Templates.pdf",  desc: "Channel formats for professional comms" },
+      { name: "GGP-Analysis-Templates.pdf", desc: "Analysis templates for consulting deliverables" },
+    ],
+  },
+] as const;
+
+export type PlatformId = (typeof PLATFORMS_META)[number]["id"];
+
 export const TIERS = [
   {
     tier: "T1",

@@ -11,7 +11,7 @@ type Tab = "describe" | "configure" | "feedback";
 
 const TABS: { id: Tab; label: string }[] = [
   { id: "describe",  label: "Describe"    },
-  { id: "configure", label: "M365 Copilot" },
+  { id: "configure", label: "Configure"    },
   { id: "feedback",  label: "Feedback"    },
 ];
 
