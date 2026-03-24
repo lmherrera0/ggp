@@ -1,13 +1,10 @@
 "use client";
 
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "/ggp";
-
 const PAPER_1 = {
   title: "Beyond Detection: A Hallucination Governance Architecture for AI-Verified Professional Communication",
   author: "Liz Magaly Herrera",
   date: "February 2026",
   doi: "https://doi.org/10.5281/zenodo.18751614",
-  pdfUrl: `${BASE_PATH}/Paper`,
   abstract:
     "As large language models become integrated into professional communication workflows, the reliability of AI-generated content emerges as a governance challenge rather than solely a technical one. This paper proposes a hallucination governance architecture — a structured approach to managing AI-generated content reliability through systematic verification processes, source classification, adversarial quality testing, and operational governance controls. Drawing on accountability theory, the epistemology of testimony, and information governance literature, the architecture addresses a documented gap: existing approaches to hallucination primarily target detection and mitigation at the model level, while organisational governance of AI-generated content in professional contexts remains largely unaddressed.",
   keywords: [
@@ -79,28 +76,18 @@ export default function ResearchPanel() {
           ))}
         </div>
 
-        {/* CTA buttons */}
-        <div className="flex flex-wrap gap-3">
-          <a
-            href={PAPER_1.pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-sm px-5 py-2.5"
-          >
-            Read paper →
-          </a>
-          <a
-            href={PAPER_1.doi}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-sans text-sm font-semibold px-5 py-2.5 rounded-lg border border-almond text-wine/70 hover:border-terracotta hover:text-wine transition-colors"
-          >
-            <span className="font-mono text-[10px] font-bold text-terracotta border border-terracotta/40 rounded px-1.5 py-0.5">
-              DOI
-            </span>
-            zenodo.18751614
-          </a>
-        </div>
+        {/* CTA */}
+        <a
+          href={PAPER_1.doi}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 font-sans text-sm font-semibold px-5 py-2.5 rounded-lg border border-almond text-wine/70 hover:border-terracotta hover:text-wine transition-colors"
+        >
+          <span className="font-mono text-[10px] font-bold text-terracotta border border-terracotta/40 rounded px-1.5 py-0.5">
+            DOI
+          </span>
+          zenodo.18751614
+        </a>
       </div>
 
     </div>

@@ -8,10 +8,11 @@ import ResearchPanel from "./copilot/ResearchPanel";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "/ggp";
 
-type Tab = "describe" | "configure" | "research" | "feedback";
+type Tab = "describe" | "demo" | "configure" | "research" | "feedback";
 
 const TABS: { id: Tab; label: string }[] = [
   { id: "describe",  label: "Describe"    },
+  { id: "demo",      label: "Live demo"   },
   { id: "configure", label: "Configure"   },
   { id: "research",  label: "Research"    },
   { id: "feedback",  label: "Feedback"    },
@@ -40,7 +41,7 @@ function HeroDemo() {
 
   return (
     <div
-      className="w-full max-w-lg mx-auto mt-10 rounded-xl overflow-hidden shadow-2xl"
+      className="w-full rounded-xl overflow-hidden"
       style={{ background: "rgba(30,12,12,0.55)", backdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.12)" }}
     >
       {/* Chrome bar */}
@@ -109,9 +110,43 @@ function HeroDemo() {
   );
 }
 
+/* ─── Demo panel ─────────────────────────────────────── */
+function DemoPanel() {
+  return (
+    <div className="max-w-2xl mx-auto py-6">
+      <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-terracotta mb-2">
+        Live demo · loops automatically
+      </p>
+      <h2 className="font-serif font-bold text-2xl sm:text-3xl text-wine leading-tight mb-2">
+        GGP in action
+      </h2>
+      <p className="font-sans text-sm text-wine/60 mb-8 max-w-md leading-relaxed">
+        A professional email sentence passes through GGP — watch how an unverified inference is flagged, surfaced, and resolved before the draft reaches the client.
+      </p>
+      <div className="rounded-2xl overflow-hidden bg-wine shadow-xl">
+        <HeroDemo />
+      </div>
+      <p className="mt-4 font-mono text-[10px] text-wine/30 tracking-wider text-center">
+        stage loops: plain text → reviewing → marked → clean output
+      </p>
+    </div>
+  );
+}
+
 /* ─── Main page ──────────────────────────────────────── */
+function getInitialTab(): Tab {
+  if (typeof window === "undefined") return "describe";
+  const hash = window.location.hash.replace("#", "") as Tab;
+  return ["describe", "demo", "configure", "research", "feedback"].includes(hash) ? hash : "describe";
+}
+
 export default function CopilotPage() {
-  const [tab, setTab] = useState<Tab>("describe");
+  const [tab, setTab] = useState<Tab>(getInitialTab);
+
+  function navigate(t: Tab) {
+    setTab(t);
+    window.location.hash = t;
+  }
 
   return (
     <>
@@ -141,7 +176,7 @@ export default function CopilotPage() {
             <a href="https://lmherrera0.github.io" className="font-mono text-sm text-wine/40 hover:text-terracotta transition-colors">
               ← lmherrera0
             </a>
-            <button onClick={() => setTab("configure")} className="btn-primary text-sm px-4 py-2 hidden sm:inline-flex">
+            <button onClick={() => navigate("configure")} className="btn-primary text-sm px-4 py-2 hidden sm:inline-flex">
               Get the fields
             </button>
           </div>
@@ -157,14 +192,16 @@ export default function CopilotPage() {
               <span className="hero-word-2 block italic text-clay">Nothing passes</span>
               <span className="hero-word-3 block">unverified.</span>
             </h1>
-            <p className="hero-word-3 font-sans text-base text-almond/70 max-w-md mx-auto leading-relaxed">
+            <p className="hero-word-3 font-sans text-base text-almond/70 max-w-md mx-auto leading-relaxed mb-8">
               An anti-hallucination framework that tags every AI claim, runs reputation risk checks,
               and keeps you in control before anything reaches a client.
             </p>
-            <HeroDemo />
-            <p className="mt-4 font-mono text-[11px] text-almond/30 tracking-wider">
-              LIVE DEMO · LOOPS AUTOMATICALLY
-            </p>
+            <button
+              onClick={() => navigate("demo")}
+              className="hero-word-3 font-mono text-xs text-almond/40 hover:text-almond/70 tracking-wider transition-colors border border-almond/20 hover:border-almond/40 rounded-full px-4 py-2"
+            >
+              watch live demo →
+            </button>
           </div>
         </section>
 
@@ -175,7 +212,7 @@ export default function CopilotPage() {
               {TABS.map(t => (
                 <button
                   key={t.id}
-                  onClick={() => setTab(t.id)}
+                  onClick={() => navigate(t.id)}
                   className={`font-sans text-sm font-semibold px-5 py-2 rounded-bvvg transition-all duration-200 whitespace-nowrap ${
                     tab === t.id
                       ? "bg-wine text-ivory shadow-sm"
@@ -193,7 +230,8 @@ export default function CopilotPage() {
         <section className="section-gap">
           <div className="section-container">
             <div key={tab} className="tab-enter">
-              {tab === "describe"  && <DescribePanel onConfigure={() => setTab("configure")} />}
+              {tab === "describe"  && <DescribePanel onConfigure={() => navigate("configure")} />}
+              {tab === "demo"      && <DemoPanel />}
               {tab === "configure" && <ConfigurePanel />}
               {tab === "research"  && <ResearchPanel />}
               {tab === "feedback"  && <FeedbackPanel />}
