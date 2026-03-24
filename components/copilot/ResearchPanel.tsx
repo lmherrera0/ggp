@@ -29,19 +29,6 @@ const PAPER_1 = {
   ],
 };
 
-const PAPER_2 = {
-  title: "LLM Psychology for Defensive Agent Design",
-  subtitle: "Using cognitive patterns as guardrails against prompt injection and manipulation",
-  status: "In progress",
-  abstract:
-    "Analyses four foundational papers on LLM psychological behaviour — anxiety-induced bias, motivational vigilance, cognitive theory integration, and adversarial vulnerability — to construct a defensive design framework. The core thesis: the same mechanisms that make LLMs vulnerable (emotional state sensitivity, conformity, approval-seeking) can become defences when redirected toward protecting the operator rather than complying with attackers.",
-  foundationPapers: [
-    { id: "2304.11111", title: "Inducing Anxiety in LLMs Can Induce Bias", venue: "Helmholtz Munich · 2023" },
-    { id: "2510.19687", title: "Are LLMs Sensitive to the Motives Behind Communication?", venue: "Princeton / Anthropic · 2025" },
-    { id: "2505.00003", title: "Incorporating Psychological Theories in LLMs — A Review", venue: "Columbia / Cambridge · 2025" },
-    { id: "2602.20021", title: "Agents of Chaos", venue: "Northeastern / Harvard / MIT / CMU · 2026" },
-  ],
-};
 
 export default function ResearchPanel() {
   return (
@@ -113,58 +100,6 @@ export default function ResearchPanel() {
             </span>
             zenodo.18751614
           </a>
-        </div>
-      </div>
-
-      {/* Divider */}
-      <div className="border-t border-almond/60" />
-
-      {/* Paper 2 — In Progress */}
-      <div>
-        <div className="flex items-center gap-2 mb-2">
-          <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-wine/35">
-            Working paper
-          </p>
-          <span className="font-sans text-[9px] font-bold tracking-wider uppercase text-clay border border-clay/30 bg-clay/10 rounded-full px-2 py-0.5">
-            In progress
-          </span>
-        </div>
-
-        <h2 className="font-serif font-bold text-xl sm:text-2xl text-wine leading-tight mb-1">
-          {PAPER_2.title}
-        </h2>
-        <p className="font-sans text-xs text-wine/45 mb-5 italic">{PAPER_2.subtitle}</p>
-
-        <p className="font-sans text-sm text-wine/65 leading-relaxed mb-6 max-w-2xl">
-          {PAPER_2.abstract}
-        </p>
-
-        {/* Foundation papers */}
-        <div>
-          <p className="font-sans text-[10px] font-bold tracking-wider uppercase text-wine/35 mb-3">
-            Foundation papers
-          </p>
-          <div className="space-y-2">
-            {PAPER_2.foundationPapers.map(p => (
-              <a
-                key={p.id}
-                href={`https://arxiv.org/abs/${p.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 rounded-lg border border-almond px-4 py-3 bg-almond/10 hover:border-terracotta/40 hover:bg-almond/20 transition-colors group"
-              >
-                <span className="font-mono text-[9px] text-wine/30 font-bold mt-0.5 flex-shrink-0 group-hover:text-terracotta/60 transition-colors">
-                  arXiv
-                </span>
-                <div>
-                  <p className="font-sans text-xs font-semibold text-wine group-hover:text-terracotta transition-colors leading-snug">
-                    {p.title}
-                  </p>
-                  <p className="font-sans text-[10px] text-wine/40 mt-0.5">{p.venue}</p>
-                </div>
-              </a>
-            ))}
-          </div>
         </div>
       </div>
 
