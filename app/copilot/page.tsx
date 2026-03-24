@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import CopilotPage from "@/components/CopilotPage";
 
 export const metadata: Metadata = {
-  title: "GGP for Copilot — Grounded Gate Protocol on M365 Copilot Agent Builder",
+  title: "GGP — Grounded Gate Protocol · Anti-Hallucination for Professional AI",
   description:
-    "Set up the Grounded Gate Protocol anti-hallucination framework on Microsoft 365 Copilot Agent Builder. Copy-ready fields: name, description, instructions, knowledge files, and conversation starters.",
+    "Grounded Gate Protocol: an anti-hallucination framework that tags every AI claim, runs reputation risk checks, and keeps you in control before anything reaches a client. Configure on M365 Copilot, ChatGPT, Claude, and Google Gems.",
   openGraph: {
-    title: "GGP for Copilot — Anti-Hallucination on M365",
+    title: "GGP — Nothing Passes Unverified",
     description:
-      "Set up the Grounded Gate Protocol on Microsoft 365 Copilot Agent Builder. Nothing passes unverified.",
+      "Anti-hallucination framework for professional AI. Tags every claim, runs 8-dimension risk checks, delivers marked drafts. Configure on any major AI platform.",
     url: "/ggp/copilot",
     siteName: "Grounded Gate Protocol",
     type: "website",

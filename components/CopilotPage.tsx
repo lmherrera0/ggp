@@ -136,7 +136,7 @@ export default function CopilotPage() {
         {/* ── Nav ── */}
         <nav className="sticky top-0 z-50 bg-ivory/96 backdrop-blur border-b border-almond">
           <div className="section-container flex items-center justify-between h-14">
-            <a href={BASE_PATH} className="font-mono text-sm text-wine/40 hover:text-terracotta transition-colors">
+            <a href="https://lmherrera0.github.io" className="font-mono text-sm text-wine/40 hover:text-terracotta transition-colors">
               ← lmherrera0
             </a>
             <button onClick={() => setTab("configure")} className="btn-primary text-sm px-4 py-2 hidden sm:inline-flex">
