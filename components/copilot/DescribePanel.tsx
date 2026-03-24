@@ -196,7 +196,7 @@ export default function DescribePanel({ onConfigure }: { onConfigure: () => void
           </div>
           <div className="px-6 pb-4 flex flex-wrap gap-4 font-sans text-xs text-wine/40 border-t border-almond/40 pt-3">
             <span>🟢 1</span><span>🟡 1</span>
-            <span className="text-sage font-semibold ml-auto">GGP 7/8 · awaiting I1 decision</span>
+            <span className="text-wine/60 font-semibold ml-auto">GGP 7/8 · awaiting I1 decision</span>
           </div>
         </div>
       </Section>

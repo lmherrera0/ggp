@@ -35,9 +35,9 @@ function CharBar({ count, limit }: { count: number; limit: number }) {
         <div className="flex items-center justify-between mb-1.5">
           <p className="font-sans text-[10px] text-wine/40 font-semibold tracking-wider uppercase">Character budget</p>
           <p className="font-mono text-[11px] text-wine/50">
-            <span className="text-sage font-bold">{count.toLocaleString()}</span>
+            <span className="text-wine/60 font-bold">{count.toLocaleString()}</span>
             <span className="text-wine/25"> chars</span>
-            <span className="ml-1.5 text-sage text-[10px]">· no limit</span>
+            <span className="ml-1.5 text-wine/40 text-[10px]">· no limit</span>
           </p>
         </div>
         <div className="h-1.5 w-full bg-sage/25 rounded-full overflow-hidden">

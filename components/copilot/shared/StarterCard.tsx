@@ -34,7 +34,7 @@ export default function StarterCard({
         <span className="text-wine/30 text-sm">{open ? "▲" : "▼"}</span>
       </button>
       {open && (
-        <div className="px-4 pb-4 pt-2 bg-white border-t border-almond space-y-3">
+        <div className="px-4 pb-4 pt-2 bg-ivory border-t border-almond space-y-3">
           <div>
             <div className="flex items-center justify-between mb-1">
               <span className="font-sans text-[10px] font-bold tracking-wider uppercase text-wine/40">
