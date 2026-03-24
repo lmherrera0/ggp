@@ -4,14 +4,16 @@ import { useState, useEffect } from "react";
 import DescribePanel from "./copilot/DescribePanel";
 import ConfigurePanel from "./copilot/ConfigurePanel";
 import FeedbackPanel from "./copilot/FeedbackPanel";
+import ResearchPanel from "./copilot/ResearchPanel";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "/ggp";
 
-type Tab = "describe" | "configure" | "feedback";
+type Tab = "describe" | "configure" | "research" | "feedback";
 
 const TABS: { id: Tab; label: string }[] = [
   { id: "describe",  label: "Describe"    },
-  { id: "configure", label: "Configure"    },
+  { id: "configure", label: "Configure"   },
+  { id: "research",  label: "Research"    },
   { id: "feedback",  label: "Feedback"    },
 ];
 
@@ -193,6 +195,7 @@ export default function CopilotPage() {
             <div key={tab} className="tab-enter">
               {tab === "describe"  && <DescribePanel onConfigure={() => setTab("configure")} />}
               {tab === "configure" && <ConfigurePanel />}
+              {tab === "research"  && <ResearchPanel />}
               {tab === "feedback"  && <FeedbackPanel />}
             </div>
           </div>
