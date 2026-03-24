@@ -208,7 +208,7 @@ export default function CopilotPage() {
         {/* ── Tab bar ── */}
         <div className="sticky top-14 z-40 bg-ivory/96 backdrop-blur border-b border-almond">
           <div className="section-container">
-            <div className="flex gap-0.5 py-2">
+            <div className="flex gap-0.5 py-2 justify-center">
               {TABS.map(t => (
                 <button
                   key={t.id}
