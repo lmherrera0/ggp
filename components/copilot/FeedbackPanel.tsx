@@ -53,7 +53,7 @@ export default function FeedbackPanel() {
   }
 
   return (
-    <div className="max-w-lg">
+    <div className="max-w-lg mx-auto">
 
       {/* Heading */}
       <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-terracotta mb-2">

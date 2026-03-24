@@ -88,7 +88,7 @@ export default function ConfigurePanel() {
   };
 
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-3xl mx-auto">
 
       {/* Setup steps */}
       <div className="relative mb-10">

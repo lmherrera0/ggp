@@ -30,7 +30,7 @@ function Section({ n, heading, children, dark = false }: {
 
 export default function DescribePanel({ onConfigure }: { onConfigure: () => void }) {
   return (
-    <div className="space-y-5 max-w-4xl">
+    <div className="space-y-5 max-w-4xl mx-auto">
 
       {/* 01 — THE PROBLEM */}
       <Section n="01" heading="AI sounds authoritative. It isn't always right." dark>

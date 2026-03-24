@@ -29,7 +29,7 @@ const PAPER_1 = {
 
 export default function ResearchPanel() {
   return (
-    <div className="max-w-3xl space-y-10">
+    <div className="max-w-3xl space-y-10 mx-auto">
 
       {/* Paper 1 */}
       <div>
